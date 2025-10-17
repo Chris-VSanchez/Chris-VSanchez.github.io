@@ -17,7 +17,11 @@ function createOrder()
 
     // Input Validation:
     if( itemNumber === null || !itemNumber.trim())
-            window.alert("Order cancelled.");
+    {
+        window.alert("Order cancelled.");
+        displayOrder(userName, currentTime, null, null, orderSuccessful);
+        return;
+    }
 
     else
     {
@@ -28,10 +32,10 @@ function createOrder()
             itemNumber = window.prompt("Invalid entry received! \nPlease select an entry between 1 and 3:");
 
             if( itemNumber === null || !itemNumber.trim())
-                {
-                    window.alert("Order cancelled.");
-                    break;
-                }
+            {
+                window.alert("Order cancelled.");
+                break;
+            }
 
             itemNumber = Number(itemNumber);
         }
@@ -39,19 +43,15 @@ function createOrder()
 
 // Get the user's quantity:
     let itemQuantity;
-    if( itemNumber)
-        itemQuantity = window.prompt("Select the quantity you would like to purchase! \nPlease select an entry between 1 and 99:");
-
-    else
-    {
-        itemQuantity = null;
-        displayOrder(userName, currentTime, itemNumber, itemQuantity, orderSuccessful);
-        return;
-    }
+    itemQuantity = window.prompt("Select the quantity you would like to purchase! \nPlease select an entry between 1 and 99:");
 
     // Input Validation:
     if( itemQuantity === null || !itemQuantity.trim())
+    {
         window.alert("Order cancelled.");
+        displayOrder(userName, currentTime, null, null, orderSuccessful);
+        return;
+    }
 
     else
     {
@@ -62,18 +62,20 @@ function createOrder()
             itemQuantity = window.prompt("Invalid entry received! \nPlease select an entry between 1 and 99:");
 
             if( itemQuantity === null || !itemQuantity.trim())
-                {
-                    window.alert("Order cancelled.");
-                    break;
-                }
+            {
+                window.alert("Order cancelled.");
+                displayOrder(userName, currentTime, null, null, orderSuccessful);
+                break;
+            }
 
             itemQuantity = Number(itemQuantity);
         }
-
-        orderSuccessful = true;
     }
 
 // Display the user's name and order with the right time:
+    if( itemNumber && itemQuantity)
+        orderSuccessful = true;
+
     displayOrder(userName, currentTime, itemNumber, itemQuantity, orderSuccessful);
 }
 
