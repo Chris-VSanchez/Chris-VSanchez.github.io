@@ -1,0 +1,20 @@
+/* Lab 6 Styles */
+
+.lab6-show-btn
+{
+    background-color: #FFD166;
+    transition: background-color .3s ease;
+}
+
+.lab6-show-btn:hover { background-color: #FFB347; }
+.lab6-show-btn:focus { background-color: #FFB347; }
+
+
+.lab6-hide-btn
+{
+    background-color: #FF6B6B;
+    transition: background-color .3s ease;
+}
+
+.lab6-hide-btn:hover { background-color: #FF4C4C; }
+.lab6-hide-btn:focus { background-color: #FF4C4C; } 
