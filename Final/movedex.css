@@ -1,0 +1,115 @@
+/* List layout for move entries */ 
+.movedex-list
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    align-items: center;
+}
+
+/* Styling for every move entry */
+.move-entry
+{
+    display: flex;
+    align-items: center;
+    background-color: #212121;
+    border: 1px solid #1a1a1a;
+    border-radius: 10px;
+    font-family: Sen, sans-serif;
+    color: #ffffff;
+    padding: 12px 16px;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.move-entry:hover
+{ background-color: #1a1a1a; }
+
+/* Left side of each entry */
+.left-side
+{
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.move-name
+{
+    font-weight: 700;
+}
+
+/* Right side of each entry */
+.right-side
+{
+    display: grid;
+    grid-template-columns: minmax(70px, 100px) 70px 70px;
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+}
+
+/* Image group styling */
+.move-images
+{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.type-image
+{
+    width: 30px;
+    height: auto;
+    object-fit: contain;
+}
+
+.damage-image
+{
+    height: 30px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Move stats */
+.move-stat
+{
+    display: flex;
+    justify-content: flex-start;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+.move-information
+{ 
+    color: #f0f0f0;
+    font-weight: 400; 
+}
+
+.move-value
+{ font-weight: 700; }
+
+.flash
+{ animation: flashEntry 2.5s ease-out; }
+
+@keyframes flashEntry 
+{
+    0%   { background-color: rgba(255, 193, 7, 0.55); }
+    50%  { background-color: rgba(255, 193, 7, 0.35); }
+    60%  { background-color: rgba(255, 193, 7, 0.20); }
+}
+
+/* Responsive view */
+@media (max-width: 414px) 
+{
+    .move-name
+    { margin-bottom: 12px; }
+
+    .right-side 
+    {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        grid-auto-flow: row;
+        gap: 12px;
+        width: 100%;
+    }
+}

@@ -1,0 +1,160 @@
+/* Custom image in the background */
+body
+{
+    background: #424242 url("https://assets.pokemon.com/static2/_ui/img/chrome/body_bg.png");
+}
+
+/* Custom navbar styling */
+.pokemon-navbar
+{
+    padding: 0 !important;
+    height: auto !important;
+    align-items: stretch !important;
+}
+
+.pokemon-navbar .container-fluid
+{ align-items: stretch !important; }
+
+/* Navbar alignment */
+.navbar-nav
+{
+    display: flex;
+    justify-content: center;
+    align-items: stretch !important;
+    gap: 0;
+}
+
+/* Navbar items */
+.nav-item
+{
+    margin: 0;
+    text-align: center;
+    width: 140px;
+    position: relative;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    color: #555555;
+}
+
+/* Link styling */
+.nav-item a
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    font-family: Sen, sans-serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    padding-top: 10px;
+    padding-bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Text on active link and on hover / focus */
+.nav-item.active, .nav-item:hover, .nav-item a:focus
+{ color: #212121; }
+
+/* Poké Ball logo */
+.logo
+{
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+/* Underline base style */
+.nav-item a::after
+{
+    content: "";
+    width: 100%;
+    height: 4px;
+    margin-top: 10px;
+    display: block;
+}
+
+/* Individual underlines */
+.nav-item.home a::after { background-color: #f62d14; }
+.nav-item.pokedex a::after { background-color: #f19720; }
+.nav-item.movedex a::after { background-color: #fad61d; }
+.nav-item.labs a::after { background-color: #6CC52F; }
+
+/* Responsive view */
+@media (max-width: 992px)
+{
+    .pokemon-navbar .container-fluid
+    {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* Toggle button */
+    .navbar-toggler 
+    {
+        border-radius: 0;
+        background-color: #212121;
+        box-shadow: none !important;
+    }
+    
+    .navbar-toggler:not(.collapsed)
+    {
+        border-radius: 0;
+        background-color: #111111;
+        box-shadow: none !important;
+    }
+
+    /* Button on collapse */
+    .navbar-toggler.collapsed .navbar-toggler-icon 
+    { background-image: url("Menu Icons/Toggle (White).svg") !important; }
+
+    .navbar-toggler.collapsed:hover .navbar-toggler-icon
+    { background-image: url("Menu Icons/Toggle (Grey).svg") !important; }
+
+    /* Button on uncollapsed */
+    .navbar-toggler:not(.collapsed) .navbar-toggler-icon
+    { background-image: url("Menu Icons/Toggle (Grey).svg") !important; }
+
+    .navbar-toggler:not(.collapsed):hover .navbar-toggler-icon 
+    { background-image: url("Menu Icons/Toggle (White).svg") !important; }
+
+    .navbar-nav
+    {
+        align-items: flex-start !important;
+        justify-content: flex-start;
+    }
+
+    .nav-item
+    {
+        width: 100%;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .nav-item a
+    {
+        flex-direction: row;
+        padding-left: 10px;
+        padding-top: 0;
+        padding-bottom: 0;
+        align-items: center;
+    }
+    
+    .logo
+    {
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+
+    /* Make underlines vertical */
+    .nav-item a::after
+    {
+        position: absolute;
+        left: 0;
+        width: 4px;
+        height: 30px;
+        margin-top: 0;
+    }
+}
